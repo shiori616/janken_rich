@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sample.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <title>にらめっこしましょ</title>
+</head>
+<body>
+    <header>
+        <h1>にらめっこしましょ</h1>
+    </header>
+    <div class="selection">
+        <select name="" id="dataSelector">
+            <option value="default">誰と？</option>
+            <option value="wao">ワオキツネザル</option>
+            <option value="gorilla">ゴリラ</option>
+        </select>
+    </div>
+    <div class="main">
+        <img src="img/0.png" alt="" class="img_box">
+    </div>
+    <div class="btn_div">
+        <button class="btn">あっぷっぷ</button>
+    </div>
+    <footer></footer>
+
+    <script>    
+
+        const dataSelector = $('#dataSelector');
+        console.log(dataSelector);
+
+        function processSelectedData(selectedData) {
+            // 初期状態
+            $('.img_box').attr('src','img/0.png');
+
+            // 選択されたデータに応じた処理
+            switch (selectedData) {
+                case 'wao':
+                    wao();
+                    break
+                case 'gorilla':
+                    gorilla();
+                    break
+// 誰とを選択した場合、機能停止したいのだが、前の関数が引き継がれる
+                case 'default': 
+                    $('.img_box').attr('src','img/0.png');
+                    break;
+            }
+
+        }
+
+
+        // ワオキツネザルが選択された場合のオプション
+        function wao() {
+            // 初期設定
+            $('.img_box').attr('src','img/0.png');
+
+            $('.btn').click(function(){
+                const randomNumber = Math.random();
+                const multipliedNumber = randomNumber * 6;
+                const integerNumber = Math.floor(multipliedNumber);
+                const num = integerNumber;
+                console.log("ランダムな数字"+ num);
+
+                if (num === 0) {
+                    $('.img_box').attr('src','img/0.png');
+                }
+                if (num === 1) {
+                    $('.img_box').attr('src','img/1.png');
+                }
+                if (num === 2) {
+                    $('.img_box').attr('src','img/2.png');
+                }
+                if (num === 3) {
+                    $('.img_box').attr('src','img/3.png');
+                }
+                if (num === 4) {
+                    $('.img_box').attr('src','img/4.png');
+                }
+                if (num === 5) {
+                    $('.img_box').attr('src','img/5.png');
+                } 
+            });
+        }
+
+        // ゴリラが選択された場合のオプション
+        function gorilla() {
+            // 初期設定
+            $('.img_box').attr('src','img/g_0.png');
+
+            $('.btn').click(function(){
+                const randomNumber = Math.random();
+                const multipliedNumber = randomNumber * 6;
+                const integerNumber = Math.floor(multipliedNumber);
+                const num = integerNumber;
+                console.log("ランダムな数字"+ num);
+
+                if (num === 0) {
+                    $('.img_box').attr('src','img/g_0.png');
+                }
+                if (num === 1) {
+                    $('.img_box').attr('src','img/g_6.png');
+                }
+                if (num === 2) {
+                    $('.img_box').attr('src','img/g_2.png');
+                }
+                if (num === 3) {
+                    $('.img_box').attr('src','img/g_3.png');
+                }
+                if (num === 4) {
+                    $('.img_box').attr('src','img/g_4.png');
+                }
+                if (num === 5) {
+                    $('.img_box').attr('src','img/g_5.png');
+                } 
+            });
+        }
+
+        
+        // プルダウンの選択が変更されたときのイベントリスナーを設定
+        dataSelector.on('change', function() {
+            const selectedValue = $(this).val(); // 選択された値を取得
+            processSelectedData(selectedValue);    // その値を使って関数を実行
+        });
+
+
+
+    </script>
+</body>
+</html>

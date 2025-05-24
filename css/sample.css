@@ -1,0 +1,118 @@
+/* base */
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family:'メイリオ', 'Meiryo', sans-serif;
+}
+
+header{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family:'メイリオ', 'Meiryo', sans-serif;
+    font-weight: bold;
+}
+
+h1{
+    font-family: "Kiwi Maru";
+    font-size: xx-large;
+}
+
+/* main box */
+.main{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dataSelector {
+    /* --- ボックスのような見た目とフォントの変更 --- */
+
+    /* フォントの指定 */
+    font-family: "Arial", sans-serif; /* 一般的なフォント。好みに応じて変更してください */
+    font-size: 16px; /* 文字のサイズ */
+    color: #333; /* 文字の色 */
+
+    /* ボックスの基本的なスタイル */
+    /* width: 200px; プルダウンの幅 */
+    padding: 10px 15px; /* 内側の余白 (上下 左右) */
+    /* border: 2px solid #5cb85c; 枠線の色と太さ */
+    border-radius: 8px; /* 角の丸み */
+    background-color: #f9f9f9; /* 背景色 */
+    cursor: pointer; /* マウスオーバー時にカーソルをポインタに */
+    text-align: center; /* テキストを中央寄せ */
+    text-align-last: center; /* Internet ExplorerとEdgeで選択された値の配置を中央に */
+
+    /* デフォルトの矢印などを非表示に（見た目を統一するため） */
+    -webkit-appearance: none; /* Safari/Chrome用 */
+    -moz-appearance: none;    /* Firefox用 */
+    appearance: none;         /* 標準 */
+
+    /* カスタムの矢印を背景画像として追加する場合 */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M2%200L0%202h4L2%200z%22%2F%3E%3C%2Fsvg%3E'); /* 下向きのSVG矢印 */
+    background-repeat: no-repeat;
+    background-position: right 15px center; /* 矢印の位置 */
+    background-size: 8px 10px; /* 矢印のサイズ */
+
+    /* フォーカス時のスタイル（選択状態） */
+    &:focus {
+        border-color: #4CAF50; /* フォーカス時の枠線の色 */
+        outline: none; /* デフォルトのアウトラインを削除 */
+        box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3); /* ソフトな影 */
+    }
+}
+
+.img_box{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    /* width: 30%; */
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px; /* 丸みを帯びた形 */
+    background-color: #f37ca3; /* 淡いピンク */
+    color: #fbfbfb; /* 少し濃いめのピンク */
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.btn:hover{
+    background-color: #f4075a;
+}
+
+.btn:focus{
+    outline: none; /* フォーカス時の枠線を消す */
+    box-shadow: 0 0 5px #f48fb1; /* フォーカス時の影 */
+}
